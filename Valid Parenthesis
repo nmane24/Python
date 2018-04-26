@@ -1,0 +1,21 @@
+def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        
+        length = len(s)
+        if length == 0:
+            return True
+        
+        if length % 2 != 0:
+            return False
+        
+        while '()' in s or '{}' in s or '[]' in s:
+            s = s.replace("()", "").replace("{}","").replace("[]","")
+            
+        if s =="":
+            return True
+        else:
+            return False
+        
