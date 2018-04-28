@@ -1,0 +1,24 @@
+def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        x = 1
+        y = 1
+        #Implemented Fibonacci series but returned x; a step before the final step
+        while(n != 0):
+            result = x+y
+            x = y
+            y = result
+            n-=1
+            
+        return x
+    
+    
+        """
+        while(n != 0):
+            x = x + y
+            y = x - y
+            n-=1
+        return x
+        """
