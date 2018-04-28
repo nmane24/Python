@@ -1,0 +1,34 @@
+ def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        i = j = 0
+        carry = 0
+        result = ""
+        
+        i_a,i_b = a[::-1],b[::-1]
+        while(i <len(a) or j <len(b)):
+            addi = 0
+            if(i < len(a)):
+                addi+= int(i_a[i])
+            if(j < len(b)):
+                addi+=int(i_b[i])
+        
+            addi += carry
+            result+= str(addi%2)
+            carry = 1 if addi >=2 else 0
+            i+=1
+            j+=1
+       
+        if carry:
+            result+= str(carry)
+        return result[::-1]
+            
+            
+            
+        """
+        Other Solution
+        return bin(int(a, 2)+int(b, 2))[2:]
+        """
